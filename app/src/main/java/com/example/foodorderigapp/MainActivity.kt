@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), FoodItemClicked {
     }
 
     private fun fetchData(){
-        val url="https://run.mocky.io/v3/f8d1684f-7904-4989-b4b8-7c8f32b189e0"
+        val url="https://run.mocky.io/v3/268860e9-4491-4944-9f62-35e6488fc1d1"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,
             url,
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), FoodItemClicked {
                     val food=Food(
                         foodJsonObject.getString(  "title" ),
                         foodJsonObject.getString(  "description" ),
-                        foodJsonObject.getString(  "image_url" ),
+                        foodJsonObject.getString(  "image_Url" ),
                         foodJsonObject.getString(  "cost" )
                     )
                     foodArray.add(food)
