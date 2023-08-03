@@ -1,6 +1,7 @@
 
 package com.example.foodorderigapp
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +40,12 @@ class Adapter(private val listener: MainActivity): RecyclerView.Adapter<FoodView
             val clickedItem = items[position]
             listener.onItemClicked(clickedItem)
         }
+        holder.button2.setOnClickListener {
+            val clickedItem = items[position]
+            listener.onItemClicked(clickedItem)
+        }
     }
+    @SuppressLint("NotifyDataSetChanged")
     fun updateFood(updatedFood:ArrayList<Food>){
         items.clear()
         items.addAll(updatedFood)
@@ -53,9 +59,11 @@ class FoodViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
     val image: ImageView =itemView.findViewById(R.id.image)
     val description:TextView=itemView.findViewById(R.id.description)
     val cost:TextView=itemView.findViewById(R.id.cost)
-    val button: Button =itemView.findViewById(R.id.btn)
+    val button: Button =itemView.findViewById(R.id.decrementButton)
+    val button2: Button =itemView.findViewById(R.id.incrementButton)
 }
 
 interface FoodItemClicked{
     fun onItemClicked(item:Food)
+    fun Food( title: String, description: String,cost: String,image_Url:String): Food
 }

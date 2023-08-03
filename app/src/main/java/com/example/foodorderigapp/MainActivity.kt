@@ -1,4 +1,6 @@
 package com.example.foodorderigapp
+
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -52,5 +54,9 @@ class MainActivity : AppCompatActivity(), FoodItemClicked {
     }
 
     override fun onItemClicked(item: Food) {
+    }
+
+    override fun Food(title: String, description: String, cost: String, image_Url: String): Food {
+        TODO("Not yet implemented")
     }
 }
